@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="projeto.css">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Farm Sheet</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+    crossorigin="anonymous">
+      
+    </script>
+</head>
+
+<body>
+  <div id="info" class="container mx-auto bg-light mt-4">
+    <h1 class="text-center">Informe os materiais</h1>
+
+    <form id="cadastro">
+      <H4>Idean </H4>
+      <input type="text" required class="form-control col-md-2" id="idean" name="idean">
+      <br>
+
+      <h4 class="informe">Informe seu summon</h4>
+
+
+      <!-- com uso somente de bootstrap é preciso posicionar em lugares estranhas -->
+      <select class="form-control col-md-3 float-right" id="imagens" onclick="imagem()">
+        <option value="selecionar">Selecione um summon</option>
+        <option value="justice">Justice</option>
+        <option value="hm">The hanged man</option>
+        <option value="death">Death</option>
+        <option value="temperance">Temperance</option>
+        <option value="devil">The Devil</option>
+        <option value="tower">The tower</option>
+        <option value="star">The star</option>
+        <option value="moon">The moon</option>
+        <option value="sun">The sun</option>
+        <option value="judgment">Judgement</option>
+      </select>
+
+
+      <h4>Astra</h4>
+
+      <h4 class="informe1">Informe sua etapa</h4>
+      <input type="text" required class="form-control col-md-2" id="astra" name="astra">
+      <br>
+      <select class="form-control col-md-3 float-right" id="etapa">
+        <option value="escolher">Escolha sua etapa</option>
+        <option value="craft">Craft</option>
+        <option value="u1">uncap1</option>
+        <option value="u2">uncap2</option>
+        <option value="u3">uncap3</option>
+        <option value="ssr">SSR</option>
+        <option value="flb">FLB</option>
+        <option value="ulb">ULB</option>
+        <option value="char">Character</option>
+      </select>
+
+      <h4>Sephira stone</h4>
+      <input type="text" required class="form-control col-md-2" id="sephira" name="sephira">
+      <br>
+      <img src="imagens/arcarum.jpg" alt="" class="foto float-right" id="foto">
+      <h4>region fragments</h4>
+      <input type="text" required class="form-control col-md-2" id="frags" name="frags">
+      <br>
+      <h4>verum proof</h4>
+      <input type="text" required class="form-control col-md-2" id="proofs" name="proofs">
+      <br>
+      <br>
+      <button class="btn btn-primary bg-secondary " type="button" onclick="calcular()">Calcular</button>
+      <button class="btn btn-primary bg-secondary" type="button" onclick="cadastrar()">Cadastrar</button>
+    </form>
+    <div id="resultado">Resultado:</div>
+  </div>
+
+
+  <script>
+    //função que faz o calculo de acordo com a etapa atual// quando a etapa muda a conta muda também levando em consideração os recursos gastos na etapa anterior
+    function calcular() {
+      var ideans = Number(idean.value);
+      var astras = Number(astra.value);
+      var sephiras = Number(sephira.value);
+      var frag = Number(frags.value);
+      var proof = Number(proofs.value);
+
+      if (etapa.value == "escolher") {
+        alert('Por favor escolha sua etapa para exibir o resultado');
+      }
+
+      else if (etapa.value == "craft") {
+        ideans = 77 - ideans;
+        astras = 308 - astras;
+        sephiras = 137 - sephiras;
+        frag = 30 - frag;
+        proof = 550 - proof;
+        if (ideans < 0) {
+          ideans = 0;
+        }
+        if (astras < 0) {
+          astras = 0;
+        }
+        if (sephiras < 0) {
+          sephiras = 0;
+        }
+        if (frag < 0) {
+          frag = 0;
+        }
+        if (proof < 0) {
+          proof = 0;
+        }
+        resultado.innerHTML = 'Resultado: você precisa de ' + ideans + ' ideans, ' + astras + ' astras, ' + sephiras + ' sephira stones, ' + frag + ' fragmentos de região, ' + proof + ' proofs elementais, boa sorte';
+
+      }
+
+      else if (etapa.value == "u1") {
+        ideans = 75 - ideans;
+        astras = 305 - astras;
+        sephiras = 135 - sephiras;
+        frag = 30 - frag;
+        proof = 545 - proof;
+        if (ideans < 0) {
+          ideans = 0;
+        }
+        if (astras < 0) {
+          astras = 0;
+        }
+        if (sephiras < 0) {
+          sephiras = 0;
+        }
+        if (frag < 0) {
+          frag = 0;
+        }
+        if (proof < 0) {
+          proof = 0;
+        }
+        resultado.innerHTML = 'Resultado: você precisa de ' + ideans + ' ideans, ' + astras + ' astras, ' + sephiras + ' sephira stones, ' + frag + ' fragmentos de região, ' + proof + ' proofs elementais, boa sorte';
+
+      }
+
+      else if (etapa.value == "u2") {
+        ideans = 72 - ideans;
+        astras = 300 - astras;
+        sephiras = 130 - sephiras;
+        frag = 30 - frag;
+        proof = 530 - proof;
+        if (ideans < 0) {
+          ideans = 0;
+        }
+        if (astras < 0) {
+          astras = 0;
+        }
+        if (sephiras < 0) {
+          sephiras = 0;
+        }
+        if (frag < 0) {
+          frag = 0;
+        }
+        if (proof < 0) {
+          proof = 0;
+        }
+        resultado.innerHTML = 'Resultado: você precisa de ' + ideans + ' ideans, ' + astras + ' astras, ' + sephiras + ' sephira stones, ' + frag + ' fragmentos de região, ' + proof + ' proofs elementais, boa sorte';
+
+      }
+
+      else if (etapa.value == "u3") {
+        ideans = 67 - ideans;
+        astras = 290 - astras;
+        sephiras = 120 - sephiras;
+        frag = 30 - frag;
+        proof = 500 - proof;
+        if (ideans < 0) {
+          ideans = 0;
+        }
+        if (astras < 0) {
+          astras = 0;
+        }
+        if (sephiras < 0) {
+          sephiras = 0;
+        }
+        if (frag < 0) {
+          frag = 0;
+        }
+        if (proof < 0) {
+          proof = 0;
+        }
+        resultado.innerHTML = 'Resultado: você precisa de ' + ideans + ' ideans, ' + astras + ' astras, ' + sephiras + ' sephira stones, ' + frag + ' fragmentos de região, ' + proof + ' proofs elementais, boa sorte';
+
+      }
+
+      else if (etapa.value == "ssr") {
+        ideans = 60 - ideans;
+        astras = 275 - astras;
+        sephiras = 105 - sephiras;
+        frag = 30 - frag;
+        proof = 450 - proof;
+        if (ideans < 0) {
+          ideans = 0;
+        }
+        if (astras < 0) {
+          astras = 0;
+        }
+        if (sephiras < 0) {
+          sephiras = 0;
+        }
+        if (frag < 0) {
+          frag = 0;
+        }
+        if (proof < 0) {
+          proof = 0;
+        }
+        resultado.innerHTML = 'Resultado: você precisa de ' + ideans + ' ideans, ' + astras + ' astras, ' + sephiras + ' sephira stones, ' + frag + ' fragmentos de região, ' + proof + ' proofs elementais, boa sorte';
+
+      }
+
+      else if (etapa.value == "flb") {
+        ideans = 45 - ideans;
+        astras = 245 - astras;
+        sephiras = 75 - sephiras;
+        frag = 30 - frag;
+        proof = 370 - proof;
+
+        if (ideans < 0) {
+          ideans = 0;
+        }
+        if (astras < 0) {
+          astras = 0;
+        }
+        if (sephiras < 0) {
+          sephiras = 0;
+        }
+        if (frag < 0) {
+          frag = 0;
+        }
+        if (proof < 0) {
+          proof = 0;
+        }
+        resultado.innerHTML = 'Resultado: você precisa de ' + ideans + ' ideans, ' + astras + ' astras, ' + sephiras + ' sephira stones, ' + frag + ' fragmentos de região, ' + proof + ' proofs elementais, boa sorte';
+
+      }
+
+      else if (etapa.value == "ulb") {
+        ideans = 20 - ideans;
+        astras = 200 - astras;
+        sephiras = 30 - sephiras;
+        frag = 20 - frag;
+        proof = 250 - proof;
+
+        if (ideans < 0) {
+          ideans = 0;
+        }
+        if (astras <= 0) {
+          astras = 0;
+        }
+        if (sephiras <= 0) {
+          sephiras = 0;
+        }
+        if (frag <= 0) {
+          frag = 0;
+        }
+        if (proof <= 0) {
+          proof = 0;
+        }
+        resultado.innerHTML = 'Resultado: você precisa de ' + ideans + ' ideans, ' + astras + ' astras, ' + sephiras + ' sephira stones, ' + frag + ' fragmentos de região, ' + proof + ' proofs elementais, boa sorte';
+
+      }
+
+      else if (etapa.value == "char") {
+        ideans = 20 - ideans;
+        astras = 200 - astras;
+        sephiras = 30 - sephiras;
+        frag = 0 - frag;
+        proof = 0 - proof;
+
+        if (ideans < 0) {
+          ideans = 0;
+        }
+        if (astras <= 0) {
+          astras = 0;
+        }
+        if (sephiras <= 0) {
+          sephiras = 0;
+        }
+        if (frag <= 0) {
+          frag = 0;
+        }
+        if (proof <= 0) {
+          proof = 0;
+        }
+        resultado.innerHTML = 'Resultado: você precisa de ' + ideans + ' ideans, ' + astras + ' astras, ' + sephiras + ' sephira stones, ' + frag + ' fragmentos de região, ' + proof + ' proofs elementais, boa sorte';
+
+      }
+
+    }
+    // Função pra trocar a imagem de acordo com o summon escolhido
+    function imagem() {
+      if (imagens.value == "selecionar") {
+        foto.src = "imagens/arcarum.jpg";
+      }
+
+      else if (imagens.value == "justice") {
+        foto.src = "imagens/justice.jpg";
+      }
+      else if (imagens.value == "hm") {
+        foto.src = "imagens/hangedman.jpg";
+      }
+      else if (imagens.value == "death") {
+        foto.src = "imagens/death.jpg";
+      }
+      else if (imagens.value == "temperance") {
+        foto.src = "imagens/temperance.jpg";
+      }
+      else if (imagens.value == "devil") {
+        foto.src = "imagens/thedevil.jpg";
+      }
+      else if (imagens.value == "tower") {
+        foto.src = "imagens/thetower.jpg";
+      }
+      else if (imagens.value == "star") {
+        foto.src = "imagens/thestar.jpg";
+      }
+      else if (imagens.value == "moon") {
+        foto.src = "imagens/themoon.jpg";
+      }
+      else if (imagens.value == "sun") {
+        foto.src = "imagens/thesun.jpg";
+      }
+      else if (imagens.value == "judgment") {
+        foto.src = "imagens/judgement.jpg";
+      }
+    }
+
+    function cadastrar() {
+        var dados = $("#cadastro").serialize();
+        console.log(dados);
+
+        $.ajax({
+          url: "../register",
+          type: 'post',
+          data: dados
+        }).done(function (resposta) {
+          if (resposta == "ok") {
+            alert('Inserido com sucesso');
+          }
+          else {
+            alert('Não foi possivel inserir');
+          }
+        });
+      }
+
+
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>  estava dando conflito-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>

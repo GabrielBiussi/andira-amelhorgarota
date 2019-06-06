@@ -1,0 +1,37 @@
+
+    .corFundoMeio{
+        background-color: rgb(24, 19, 19);
+
+    }
+    .corFundoBaixo{
+        background-color: grey;
+    }
+    body{
+        background-image:url('imagens/gbf.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        
+    }
+  
+    .imagens{
+    margin-left: 400px;
+    }
+
+    .foto{
+        height: 200px; 
+        width: 300px;
+        margin-top: -3%;
+    
+    }
+
+    .informe{
+        margin-left: 60%;
+        margin-top: -3%;
+        position: absolute;
+    }
+
+    .informe1{
+        margin-left: 61%;
+        margin-top: 1%;
+        position: absolute;
+    }

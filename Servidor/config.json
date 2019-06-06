@@ -1,0 +1,26 @@
+{
+	"database": {
+		"server": "grupofoxtech.database.windows.net",
+		"user": "Gf01191122",
+		"password": "#Gf47586727848",
+		"database": "BancoBoxZard",
+		"options": {
+			"encrypt": true
+		}
+	},
+	"security":{
+		"key": "CHAVE_SEGURANCA"
+	},
+	"database2": {
+		"server": "gabrielbiussi.database.windows.net",
+		"user": "aluno01191029",
+		"password": "#Gf42784062821",
+		"database": "BancoProjeto",
+		"options": {
+			"encrypt": true
+		}
+	},
+	"security":{
+		"key": "CHAVE_SEGURANCA"
+	}
+}
